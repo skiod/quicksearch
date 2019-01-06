@@ -2,8 +2,8 @@
 	"manifest_version":2,
 
 	"name":"quick search",
-	"description":"click once search in different websites",
-	"version":"1.2.1",
+	"description":"quicksearch🔍 is an extension for google chrome designed to help graphic designer / developers to search for pictures quickly",
+	"version":"1.2.2",
 
 "browser_action":{
 	"default_icon" : "icon.png",

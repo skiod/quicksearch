@@ -2,13 +2,13 @@ var save 		  = document.getElementById("save"),
 	pexels		  = document.getElementById("pexels"),
 	freepik       = document.getElementById("freepik"),
 	unsplash      = document.getElementById("unsplash"),
-	coolWallpaper = document.getElementById("coolwallpapers"),
+	// coolWallpaper = document.getElementById("coolwallpapers"),
 	pixBay		  = document.getElementById("pixbay"),
 	pngtree		  = document.getElementById("pngtree"),
 	pexelUrl      = "https://www.pexels.com/search/",
 	unsplashUrl   = "https://unsplash.com/search/",
 	freepikUrl    = "http://www.freepik.com/index.php?goto=2&searchform=1&k=",
-	coolWallpaperUrl = "http://coolwallpapers.ir/stockphoto/?s=",
+	// coolWallpaperUrl = "http://coolwallpapers.ir/stockphoto/?s=",
 	pixbayUrl     = "https://pixabay.com/fr/photos/?q=",
 	pngtreeUrl    = "https://pngtree.com/so/";
 
@@ -17,13 +17,13 @@ chrome.storage.sync.get("sites", function(items){
 		var pexelsChecked   	= arrayList.indexOf(pexelUrl);
 		    unsplashChecked 	= arrayList.indexOf(unsplashUrl),
 		    freepikChecked  	= arrayList.indexOf(freepikUrl),
-		    coolWallpaperCheked = arrayList.indexOf(coolWallpaperUrl),
+		    // coolWallpaperCheked = arrayList.indexOf(coolWallpaperUrl),
 		    pixbayChecked       = arrayList.indexOf(pixbayUrl),
 		    pngtreeChecked		= arrayList.indexOf(pngtreeUrl);
 		if(pexelsChecked   != -1){   pexels.checked = true; }else{ pexels.checked = false; }	
 		if(unsplashChecked != -1){	 unsplash.checked = true; }else{ unsplash.checked = false; }
 		if(freepikChecked  != -1){	 freepik.checked = true; }else{ freepik.checked = false; }
-		if(coolWallpaperCheked  != -1){	 coolWallpaper.checked = true; }else{ coolWallpaper.checked = false; }
+		// if(coolWallpaperCheked  != -1){	 coolWallpaper.checked = true; }else{ coolWallpaper.checked = false; }
 		if(pixbayChecked  != -1){	 pixBay.checked = true; }else{ pixBay.checked = false; }
 		if(pngtreeChecked  != -1){	 pngtree.checked = true; }else{ pngtree.checked = false; }
  });
@@ -63,16 +63,16 @@ chrome.storage.sync.get("sites", function(items){
     			}
 		}
 
-		if(coolWallpaper.checked == true){
-			if(sites.indexOf(coolWallpaperUrl) == -1){
-				sites.push(coolWallpaperUrl);
-			}	
-		}else{
-			var index4 = sites.indexOf(coolWallpaperUrl);
-				if(index4 != -1){
-	    			sites.splice(index4, 1);
-    			}
-		}
+		// if(coolWallpaper.checked == true){
+		// 	if(sites.indexOf(coolWallpaperUrl) == -1){
+		// 		sites.push(coolWallpaperUrl);
+		// 	}	
+		// }else{
+		// 	var index4 = sites.indexOf(coolWallpaperUrl);
+		// 		if(index4 != -1){
+	    // 			sites.splice(index4, 1);
+    	// 		}
+		// }
 
 		if(pixBay.checked == true){
 			if(sites.indexOf(pixbayUrl) == -1){
@@ -96,7 +96,6 @@ chrome.storage.sync.get("sites", function(items){
     			}
 		}
 
-		console.log(sites);
 		chrome.storage.sync.set({ "sites": sites }, function(){ });
 
 		chrome.runtime.sendMessage({
